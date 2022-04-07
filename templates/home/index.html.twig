@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h1>EcoIT</h1>
+<div class="example-wrapper">
+    {% if app.user %}
+        <div class="mb-2">
+            <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    <button><a href="{{ path('app_login') }}">Se connecter</a></button>
+</div>
+{% endblock %}
