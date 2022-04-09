@@ -3,13 +3,33 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<h1>EcoIT</h1>
+
 <div class="example-wrapper">
     {% if app.user %}
         <div class="mb-2">
             <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-    <button><a href="{{ path('app_login') }}">Se connecter</a></button>
+
 </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div>
+                <h1 class="nav-item">EcoIT</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button><a href="{{ path('app_login') }}">Devenir Instructeur</a></button>
+                <button><a href="{{ path('app_register') }}">Devenir Apprenant</a></button>
+                <button><a href="{{ path('app_login') }}">Se connecter</a></button>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 {% endblock %}
