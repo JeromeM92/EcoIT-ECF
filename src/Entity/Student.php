@@ -19,11 +19,6 @@ class Student extends User
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
     public function getPseudo(): ?string
     {
         return $this->pseudo;
@@ -35,18 +30,8 @@ class Student extends User
 
         return $this;
     }
-    public function getRoles(): array
+    public function __construct(array $roles = ['ROLE_STUDENT'])
     {
-        $roles = $this->roles;
-        $roles[] = 'ROLE_STUDENT';
-
-        return array_unique($roles);
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
+        parent::__construct($roles);
     }
 }

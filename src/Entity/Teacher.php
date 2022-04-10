@@ -77,4 +77,8 @@ class Teacher extends User
 
         return $this;
     }
+    public function __construct(array $roles = ['ROLE_TEACHER'])
+    {
+        parent::__construct($roles);
+    }
 }
