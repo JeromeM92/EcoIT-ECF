@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FormationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FormationRepository::class)]
@@ -27,6 +29,7 @@ class Formation
 
     #[ORM\Column(type: 'string', length: 500)]
     private $explication;
+
 
     public function getId(): ?int
     {
@@ -53,7 +56,6 @@ class Formation
     public function setSections(array $sections): self
     {
         $this->sections = $sections;
-
         return $this;
     }
 
